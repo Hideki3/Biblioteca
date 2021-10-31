@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Biblioteca.Model
 {
+    [Table("artigo")] // mapeamento de Tabelas oriundas de herança da classe Exemplar no BD
     class Artigo : Exemplar
     {
         private String conferencia;
@@ -22,10 +23,9 @@ namespace Biblioteca.Model
                 this.conferencia = value;
             }
         }
-        // Sobrescrita do método ToString() para o objeto Produto 
-        public override string ToString()
+        public Artigo (String nome, String area, int codRegistro, int codTipoExemplar, String conferencia) : base(nome, area, codRegistro, codTipoExemplar)
         {
-            return this.Conferencia;
+            this.Conferencia = conferencia;
         }
     }
 }

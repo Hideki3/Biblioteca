@@ -15,7 +15,7 @@ namespace Biblioteca.Dao
         U - update
         D - delete
      */
-    class ExemplarDao : ControllerBase
+    class ExemplarDao 
     {
         /* readonly: modificador que permite a atribuição de valores apenas na declaração ou dentro de um construtor */
         private readonly AppDBContext context;
@@ -35,13 +35,13 @@ namespace Biblioteca.Dao
         /* Adiciona um exemplar */
         public Exemplar Save(Exemplar exemplar)
         {
-            exemplar.CodigoRegistro = this.Sequencia();
+            exemplar.CodRegistro = this.Sequencia();
 
             context.exemplar.Add(exemplar);
             context.SaveChanges(); /* commit das alterações */
 
             /* Retorna o exemplar adicionado */
-            return this.GetById(exemplar.CodigoRegistro);
+            return this.GetById(exemplar.CodRegistro);
         }
         /* Atualiza um exemplar */
         public Exemplar Update(Exemplar exemplar)
@@ -50,7 +50,7 @@ namespace Biblioteca.Dao
             context.SaveChanges(); /* commit das alterações */
 
             /* Retorna o exemplar atualizado */
-            return this.GetById(exemplar.CodigoRegistro);
+            return this.GetById(exemplar.CodRegistro);
         }
         /* Remove um exemplar */
         public bool Remove(Exemplar exemplar)
@@ -62,16 +62,16 @@ namespace Biblioteca.Dao
         }
 
         /* Recupera um exemplar específico */
-        public Exemplar GetById(int codigoRegistro)
+        public Exemplar GetById(int codRegistro)
         {
             /* Uso do Linq para realizar a filtragem */
-            var exemplar = context.exemplar.Where(exemp => exemp.CodigoRegistro == codigoRegistro).FirstOrDefault();
+            var exemplar = context.exemplar.Where(exemp => exemp.CodRegistro == codRegistro).FirstOrDefault();
             return exemplar;
         }
         /* Gera chave primária */
         private int Sequencia()
         {
-            int seq = context.exemplar.Max(exemp => exemp.CodigoRegistro);
+            int seq = context.exemplar.Max(exemp => exemp.CodRegistro);
 
             if (seq == 0)
             {

@@ -1,0 +1,7 @@
+C:\Users\Acer\Documents\ADS\C#\Biblioteca\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.AssemblyReference.cache
+C:\Users\Acer\Documents\ADS\C#\Biblioteca\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.Form1.resources
+C:\Users\Acer\Documents\ADS\C#\Biblioteca\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.GenerateResource.cache
+C:\Users\Acer\Documents\ADS\C#\Biblioteca\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Documents\ADS\C#\Biblioteca\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.AssemblyInfoInputs.cache
+C:\Users\Acer\Documents\ADS\C#\Biblioteca\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.AssemblyInfo.cs
+C:\Users\Acer\Documents\ADS\C#\Biblioteca\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.csproj.CoreCompileInputs.cache

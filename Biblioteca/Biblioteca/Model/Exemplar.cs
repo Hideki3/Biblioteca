@@ -6,11 +6,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Biblioteca.Model
 {
-    class Exemplar
+    abstract class Exemplar
     {
         private String nome;
         private String area;
-        private int codigoRegistro;
+        private int codRegistro;
+        private int codTipoExemplar;
 
         [Column("nome")] // mapeamento de colunas no BD
         [MaxLength(100)] // restrição de tamanho da String
@@ -38,22 +39,36 @@ namespace Biblioteca.Model
             }
         }
         [Key] // Chave primária
-        [Column("codigoReg")] 
-        public int CodigoRegistro
+        [Column("codregistro")] 
+        public int CodRegistro
         {
             get
             {
-                return this.codigoRegistro;
+                return this.codRegistro;
             }
             set
             {
-                this.codigoRegistro = value;
+                this.codRegistro = value;
             }
         }
-        // Sobrescrita do método ToString() para o objeto Produto 
-        public override string ToString()
+        [Column("codtipoexemplar")]
+        public int CodTipoExemplar
         {
-            return this.CodigoRegistro + ", " + this.Nome + ", " + this.Area;
+            get
+            {
+                return this.codTipoExemplar;
+            }
+            set
+            {
+                this.codTipoExemplar = value;
+            }
+        }
+        protected Exemplar(String nome, String area, int codRegistro, int codTipoExemplar)
+        {
+            this.Nome = nome;
+            this.Area = area;
+            this.CodRegistro = codRegistro;
+            this.CodTipoExemplar = codTipoExemplar;
         }
 
     }

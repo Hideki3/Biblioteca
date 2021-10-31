@@ -6,13 +6,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Biblioteca.Model
 {
+    [Table("livro")] // mapeamento de Tabelas oriundas de herança da classe Exemplar no BD
     class Livro : Exemplar
     {
-        private String edicao;
+        private int edicao;
         private int qtdPag;
 
         [Column("edicao")] // mapeamento de colunas no BD
-        public String Edicao
+        public int Edicao
         {
             get
             {
@@ -36,11 +37,11 @@ namespace Biblioteca.Model
             }
         }
 
-        // Sobrescrita do método ToString() para o objeto Produto 
-        public override string ToString()
+        public Livro (String nome, String area, int codRegistro, int codTipoExemplar, int edicao, int qtdPag) : base (nome, area, codRegistro, codTipoExemplar)
         {
-            return this.Edicao + ", " + this.QtdPag;
+            this.Edicao = edicao;
+            this.QtdPag = qtdPag;
         }
-    }
 
+    }
 }

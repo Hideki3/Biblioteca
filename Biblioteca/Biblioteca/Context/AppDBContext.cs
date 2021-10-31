@@ -47,6 +47,10 @@ namespace Biblioteca.Context
         }
 
         public DbSet<Exemplar> exemplar { get; set; } // mapeamento: o nome do objeto precisa ser o mesmo nome da tabela no banco 
+        public DbSet<Livro> livro { get; set; }
+        public DbSet<Revista> revista { get; set; }
+        public DbSet<Artigo> artigo { get; set; }
+        public DbSet<Emprestimo> emprestimo { get; set; }
 
 
         // Construtor
